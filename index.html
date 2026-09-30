@@ -1,17 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fozilbek Mamadyusupov</title>
-<meta name="description" content="Personal website of Fozilbek Mamadyusupov: reading list, education and contact details.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fozilbek Mamadyusupov</title>
+  <meta name="description" content="Fozilbek Mamadyusupov — reading, education, ideas and personal philosophy.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif:
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(650px, calc(100% - 38px));
+      margin: 0 auto;
+      padding: 84px 0 100px;
+    }
+
+    .intro { text-align: center; }
+
+    .portrait {
+      display: block;
+      width: 360px;
+      height: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: cover;
+      border-radius: 21px;
+    }
+
+    h1 {
+      margin: 47px 0 31px;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .bio {
+      margin: 0;
+      text-align: left;
+      font-size: 24px;
+      line-height: 1.58;
+      letter-spacing: .005em;
+      color: #292929;
+    }
+
+    .bio strong { font-weight: 700; }
+
+    a {
+      color: #8d8d8d;
+      text-decoration: none;
+    }
+
+    .socials {
+      margin: 39px 0 62px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px 29px;
+      font-size: 18px;
+    }
+
+    .socials a:hover,
+    .section-nav a:hover { color: #222; }
+
+    .line {
+      height: 1px;
+      background: #e8e8e8;
+      width: 100%;
+    }
+
+    .section-nav {
+      display: flex;
+      justify-content: center;
+      gap: 53px;
+      padding: 37px 0 57px;
+      font-size: 18px;
+    }
+
+    section { padding: 0 0 74px; }
+
+    section h2 {
+      margin: 0 0 30px;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: #444;
+    }
+
+    .topics {
+      color: #777;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 39px;
+    }
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <article class="education-item">
+        <div class="years">🇺🇿 · 2014 — 2025</div>
+        <h3 class="school">101st General Secondary School, Tashkent</h3>
+        <p class="degree">Honor Graduate</p>
+        <a class="official" href="https://101maktab.zn.uz/" target="_blank" rel="noopener">Official source ↗</a>
+      </article>
+
+      <article class="education-item">
+        <div class="years">🇱🇻 · 2025 — 2026</div>
+        <h3 class="school">Transport and Telecommunication Institute</h3>
+        <p class="degree">Business and Management</p>
+        <a class="official" href="https://tsi.lv/study_programmes/business-and-management-bachelor/" target="_blank" rel="noopener">Official source ↗</a>
+      </article>
+
+      <article class="education-item">
+        <div class="years">🇮🇹 · 2026 — 2029</div>
+        <h3 class="school">University of Turin</h3>
+        <p class="degree">Global Law and Transnational Legal Studies · Top 150-200</p>
+        <a class="official" href="https://en.unito.it/studying-unito/programs/degree-programs/global-law-and-transnational-legal-studies" target="_blank" rel="noopener">Official source ↗</a>
+      </article>
+    </section>
+
+    <section class="archive-grid" aria-label="Reading, interests and writings">
+      <div class="archive-column" id="reading">
+        <h2>Reading</h2>
+        <p class="column-intro">Books that have shaped the way I think, learn and live.</p>
+
+        <article class="book">
+          <h3 class="book-title">Instruction of the Student: The Method of Learning</h3>
+          <p class="author">Burhan al-Din al-Zarnuji</p>
+          <p class="summary">A guide to sincere learning, discipline, intention, teachers and the ethics of seeking knowledge.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">The Mentor of Merchants</h3>
+          <p class="author">Ahadquli Kholmuhammad ugli</p>
+          <p class="summary">Reflections on trade, character, responsibility and the habits of an honorable merchant.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">The Value of Time in the Eyes of Scholars</h3>
+          <p class="author">Shaykh Abd al-Fattah Abu Ghuddah</p>
+          <p class="summary">Stories showing how scholars protected their time and turned it into meaningful, lasting work.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">The Harms of the Tongue</h3>
+          <p class="author">Imam Abu Hamid al-Ghazali</p>
+          <p class="summary">An examination of speech, gossip, backbiting, argument and the ways words can harm others.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">Atomic Habits</h3>
+          <p class="author">James Clear</p>
+          <p class="summary">A framework for building better behavior through small, repeatable systems and better environments.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">The 7 Habits of Highly Effective People</h3>
+          <p class="author">Stephen Covey</p>
+          <p class="summary">A principle-centered approach to responsibility, priorities, relationships and personal renewal.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">The Affairs of the World</h3>
+          <p class="author">Utkir Hoshimov</p>
+          <p class="summary">A literary reflection on family, memory, compassion and the quiet truths of human relationships.</p>
+        </article>
+        <article class="book">
+          <h3 class="book-title">Deep Work</h3>
+          <p class="author">Cal Newport</p>
+          <p class="summary">A case for sustained, distraction-free concentration as a valuable skill for meaningful work.</p>
+        </article>
+      </div>
+
+      <div class="archive-column" id="interests">
+        <h2>Interests</h2>
+        <p class="column-intro">The subjects I return to through reading, reflection and conversation.</p>
+        <div class="topic-list">
+          <span>History</span>
+          <span>Religion</span>
+          <span>Law</span>
+          <span>Personal Development</span>
+          <span>Literature</span>
+          <span>Business</span>
+          <span>Quotes</span>
+        </div>
+      </div>
+
+      <div class="archive-column" id="writings">
+        <h2>Writings</h2>
+        <p class="column-intro">Lessons, reflections and useful ideas collected along the way.</p>
+
+        <article class="writing">
+          <h3>Live by what you read.</h3>
+          <p>Reading becomes meaningful when knowledge turns into character, action and everyday choices.</p>
+        </article>
+        <article class="writing">
+          <h3>Purpose over profession.</h3>
+          <p>A meaningful life is not only about professional achievement, but also about kindness, purpose and positive change.</p>
+        </article>
+        <article class="writing">
+          <h3>Make your contribution matter.</h3>
+          <p>Learn continuously, live intentionally and leave something positive behind for the people and world around you.</p>
+        </article>
+      </div>
+    </section>
+
+
+
+    .writing {
+      padding: 0 0 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .writing:last-child { border-bottom: 0; margin-bottom: 0; }
+
+    .writing h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .writing p {
+      margin: 0;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .book {
+      padding: 0 0 29px;
+      margin-bottom: 29px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .book:last-child { border-bottom: 0; }
+
+    .book-title {
+      margin: 0 0 6px;
+      font-size: 19px;
+      line-height: 1.4;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .author {
+      margin: 0 0 12px;
+      color: #8a8a8a;
+      font-size: 14px;
+    }
+
+    .summary {
+      margin: 0;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .education-item {
+      padding: 0 0 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .education-item:last-child { border-bottom: 0; }
+
+    .years {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .school {
+      margin: 0 0 7px;
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .degree {
+      margin: 0;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .official {
+      display: inline-block;
+      margin-top: 9px;
+      color: #2867d9;
+      font-size: 13px;
+    }
+
+    .contact a {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 16px;
+    }
+
+    .contact a span:first-child { color: #999; }
+    .contact a span:last-child { color: #555; text-align: right; }
+
+    @media (max-width: 600px) {
+      .archive-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .page {
+        width: calc(100% - 28px);
+        padding-top: 83px;
+      }
+
+      .portrait {
+        width: 360px;
+        height: 450px;
+      }
+
+      h1 {
+        margin-top: 47px;
+        font-size: 28px;
+      }
+
+      .bio {
+        font-size: 23px;
+        line-height: 1.58;
+      }
+
+      .socials {
+        font-size: 18px;
+        gap: 22px 26px;
+      }
+
+      .section-nav {
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .page { padding-top: 82px; }
+
+      .portrait {
+        width: 360px;
+        height: 450px;
+      }
+
+      .bio {
+        font-size: 22px;
+      }
+
+      .section-nav {
+        gap: 29px;
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 <body>
-<main>
-<img class="photo" src="images/fozilbek.jpg" alt="Fozilbek Mamadyusupov" width="900" height="1200">
+  <main class="page">
+
+    <header class="intro">
+      <img class="portrait" src="fozilbek.jpg" alt="Fozilbek Mamadyusupov">
  <h1>Fozilbek Mamadyusupov</h1>
  <p class="bio">Beyond my professional pursuits, my core philosophy is rooted in making a meaningful impact as a HUMAN being. I strive to live a life of purpose and leave behind a legacy of kindness and positive change, ensuring my contributions truly matter to the world.</p>
  <p class="bio">Based in Italy, at the <a href="https://www.unito.it" target="_blank" rel="noopener">University of Turin</a>. I love reading books in seven directions and have turned it into a habit. Most importantly, a person should live by what they read!</p>
