@@ -1,14 +1,278 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel — Fozilbek Mamadyusupov</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal travel memories and reflections by Fozilbek Mamadyusupov.">
+
+  <title>Travel — Fozilbek Mamadyusupov</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .travel-list {
+      max-width: 850px;
+      margin: 48px auto;
+    }
+
+    .travel-entry {
+      padding: 36px 0 44px;
+      border-bottom: 1px solid var(--border-color, #dddddd);
+    }
+
+    .travel-entry:last-child {
+      border-bottom: none;
+    }
+
+    .travel-country {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .travel-country h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin: 0 0 8px;
+    }
+
+    .travel-photo {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 14px;
+      margin: 0 auto 24px;
+      background: #eeeeee;
+    }
+
+    .travel-caption {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.85;
+      opacity: 0.9;
+    }
+
+    .travel-caption p {
+      margin: 0;
+    }
+
+    .travel-caption p + p {
+      margin-top: 14px;
+    }
+
+    .travel-label {
+      display: block;
+      text-align: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .travel-list {
+        margin-top: 28px;
+      }
+
+      .travel-entry {
+        padding: 28px 0 34px;
+      }
+
+      .travel-photo {
+        aspect-ratio: 4 / 3;
+        border-radius: 10px;
+      }
+    }
+  </style>
 </head>
-<body><main class="container">
-<a class="back" href="index.html">← Home</a>
-<h1 class="page-title">Travel</h1>
-<p class="page-intro">A record of travels, milestones and meaningful accomplishments.</p>
-<section>
-</section>
-<footer><a class="back" href="index.html">← Back to home</a></footer>
-</main></body></html>
+
+<body>
+  <main class="container">
+
+    <a class="back" href="index.html">← Home</a>
+
+    <h1 class="page-title">Travel</h1>
+
+    <p class="page-intro">
+      Every country leaves something behind — a lesson, a feeling,
+      or a different way of seeing the world. Here are a few of mine.
+    </p>
+
+    <div class="travel-list">
+
+      <!-- LATVIA -->
+      <section class="travel-entry">
+        <div class="travel-country">
+          <span class="travel-label">A lesson for life</span>
+          <h2>Latvia</h2>
+        </div>
+
+        <img
+          class="travel-photo"
+          src="latviya.HEIC"
+          alt="A personal travel photograph from Latvia"
+          loading="lazy"
+        >
+
+        <div class="travel-caption">
+          <p>
+            I learned a great lesson here — one I will carry with me
+            for the rest of my life. A good one, of course!
+          </p>
+        </div>
+      </section>
+
+      <!-- SWEDEN -->
+      <section class="travel-entry">
+        <div class="travel-country">
+          <span class="travel-label">Finding balance</span>
+          <h2>Sweden</h2>
+        </div>
+
+        <img
+          class="travel-photo"
+          src="images/travel/sweden.jpg"
+          alt="A personal travel photograph from Sweden"
+          loading="lazy"
+        >
+
+        <div class="travel-caption">
+          <p>
+            When I first arrived in Sweden, the very first thing I noticed
+            was how incredibly calm everyone seemed to be. No one appeared
+            to be rushing. Everything worked like clockwork, yet there was
+            hardly any chaos.
+          </p>
+
+          <p>
+            There is a Swedish concept called <em>lagom</em>, which roughly
+            means “just the right amount.” You can see it in the way people
+            dress, in the architecture, and in the general mindset. There
+            is no need for flashy displays; simplicity is enough.
+          </p>
+
+          <p>
+            My absolute favorite part was <em>fika</em> — the tradition of
+            taking a break to enjoy coffee and a conversation. Sweden showed
+            me a different way to think about work-life balance and reminded
+            me that life should be about more than constantly rushing forward.
+          </p>
+        </div>
+      </section>
+
+      <!-- FINLAND -->
+      <section class="travel-entry">
+        <div class="travel-country">
+          <span class="travel-label">The beauty of peace</span>
+          <h2>Finland</h2>
+        </div>
+
+        <img
+          class="travel-photo"
+          src="images/travel/finland.jpg"
+          alt="A personal travel photograph from Finland"
+          loading="lazy"
+        >
+
+        <div class="travel-caption">
+          <p>
+            Everyone calls Finland the happiest country in the world.
+            But when you actually go there, you do not necessarily see
+            people wearing constant smiles or celebrating all the time.
+            You begin to understand that happiness can come from something
+            much quieter: peace.
+          </p>
+
+          <p>
+            Finns have a deep connection with nature. Even in the middle
+            of a city, you can feel as though you are walking through a
+            forest. I really appreciated the respect for personal space
+            and the comfort people seem to find in a quieter way of living.
+          </p>
+
+          <p>
+            And sitting outside in the crisp air after a traditional Finnish
+            sauna? It felt like all the mental noise could finally switch off.
+            Finland struck me as the perfect place to slow down, breathe,
+            and reset.
+          </p>
+        </div>
+      </section>
+
+      <!-- ESTONIA -->
+      <section class="travel-entry">
+        <div class="travel-country">
+          <span class="travel-label">Where history meets the future</span>
+          <h2>Estonia</h2>
+        </div>
+
+        <img
+          class="travel-photo"
+          src="images/travel/estonia.jpg"
+          alt="A personal travel photograph from Estonia"
+          loading="lazy"
+        >
+
+        <div class="travel-caption">
+          <p>
+            Estonia was an unexpected contrast for me. Walking through
+            the cobblestone streets of Tallinn’s Old Town felt like stepping
+            straight into a medieval fairytale.
+          </p>
+
+          <p>
+            Yet, just a little further along, you realize that Estonia is
+            also known for its advanced digital society and thriving startup
+            scene. It is fascinating how this small nation has embraced the
+            future while preserving so much of its history.
+          </p>
+
+          <p>
+            The chilly sea breeze and the quiet, disciplined atmosphere
+            left a lasting impression on me. Estonia reminded me that
+            progress does not have to mean leaving your roots behind.
+          </p>
+        </div>
+      </section>
+
+      <!-- TURKEY -->
+      <section class="travel-entry">
+        <div class="travel-country">
+          <span class="travel-label">A feeling of its own</span>
+          <h2>Turkey</h2>
+        </div>
+
+        <img
+          class="travel-photo"
+          src="images/travel/turkey.jpg"
+          alt="A personal travel photograph from Turkey"
+          loading="lazy"
+        >
+
+        <div class="travel-caption">
+          <p>
+            To be honest, Turkey felt a little more special to me than
+            some of the other countries I visited. Maybe it was the rich
+            history, the coastal atmosphere, the tourists, or simply the
+            weather.
+          </p>
+
+          <p>
+            Of course, every country has its own history, culture, and
+            mentality. But for some reason, Turkey just hits different.
+            There is something about its atmosphere that stays with you.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <a class="back" href="index.html">← Back to home</a>
+    </footer>
+
+  </main>
+</body>
+</html>
