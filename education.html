@@ -1,17 +1,134 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Education — Fozilbek Mamadyusupov</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Education — Fozilbek Mamadyusupov</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .school {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .country-flag {
+      display: inline-block;
+      width: 32px;
+      height: auto;
+      flex-shrink: 0;
+      object-fit: contain;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .official {
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .country-flag {
+        width: 27px;
+      }
+
+      .school {
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
-<body><main class="container">
-<a class="back" href="index.html">← Home</a>
-<h1 class="page-title">Education</h1>
-<p class="page-intro">Academic background and educational journey.</p>
-<section>
-<div class="item"><p class="years">2014–2025</p><h2 class="school">🇺🇿 101st General Secondary School, Tashkent</h2><p class="degree">Honor Graduate</p></div>
-<div class="item"><p class="years">2025–2026</p><h2 class="school">🇱🇻 Transport and Telecommunication Institute</h2><p class="degree">Business and Management</p><a class="official" href="https://tsi.lv/study_programmes/business-and-management-bachelor/" target="_blank" rel="noopener noreferrer">Official programme ↗</a></div>
-<div class="item"><p class="years">2026–2029</p><h2 class="school">🇮🇹 University of Turin</h2><p class="degree">Global Law and Transnational Legal Studies</p><a class="official" href="https://en.unito.it/studying-unito/programs/degree-programs/global-law-and-transnational-legal-studies" target="_blank" rel="noopener noreferrer">Official programme ↗</a></div>
-</section>
-<footer><a class="back" href="index.html">← Back to home</a></footer>
-</main></body></html>
+
+<body>
+  <main class="container">
+
+    <a class="back" href="index.html">← Home</a>
+
+    <h1 class="page-title">Education</h1>
+
+    <p class="page-intro">
+      Academic background and educational journey.
+    </p>
+
+    <section>
+
+      <!-- UZBEKISTAN -->
+      <div class="item">
+        <p class="years">2014–2025</p>
+
+        <h2 class="school">
+          <img
+            src="https://flagcdn.com/w80/uz.png"
+            alt="Uzbekistan flag"
+            class="country-flag"
+          >
+          <span>101st General Secondary School, Tashkent</span>
+        </h2>
+
+        <p class="degree">Honor Graduate</p>
+      </div>
+
+      <!-- LATVIA -->
+      <div class="item">
+        <p class="years">2025–2026</p>
+
+        <h2 class="school">
+          <img
+            src="https://flagcdn.com/w80/lv.png"
+            alt="Latvia flag"
+            class="country-flag"
+          >
+          <span>Transport and Telecommunication Institute</span>
+        </h2>
+
+        <p class="degree">Business and Management</p>
+
+        <a
+          class="official"
+          href="https://tsi.lv/study_programmes/business-and-management-bachelor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official programme ↗
+        </a>
+      </div>
+
+      <!-- ITALY -->
+      <div class="item">
+        <p class="years">2026–2029</p>
+
+        <h2 class="school">
+          <img
+            src="https://flagcdn.com/w80/it.png"
+            alt="Italy flag"
+            class="country-flag"
+          >
+          <span>University of Turin</span>
+        </h2>
+
+        <p class="degree">
+          Global Law and Transnational Legal Studies
+        </p>
+
+        <a
+          class="official"
+          href="https://en.unito.it/studying-unito/programs/degree-programs/global-law-and-transnational-legal-studies"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official programme ↗
+        </a>
+      </div>
+
+    </section>
+
+    <footer>
+      <a class="back" href="index.html">← Back to home</a>
+    </footer>
+
+  </main>
+</body>
+</html>
