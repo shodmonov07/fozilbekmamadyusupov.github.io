@@ -49,7 +49,7 @@
 
     .travel-photo {
       display: block;
-      width: 60%;
+      width: 35%;
       height: auto;
       max-height: none;
       aspect-ratio: auto;
@@ -57,6 +57,14 @@
       border-radius: 14px;
       margin: 0 auto 24px;
       background: transparent;
+    }
+    @media (max-width: 600px) {
+    .portrait {
+        width: 220px !important;
+        max-width: 35% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
     }
 
     .travel-caption {
