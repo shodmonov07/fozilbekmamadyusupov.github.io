@@ -7,7 +7,7 @@ a{color:inherit}
 .back{display:inline-block;margin-bottom:34px;color:#999;text-decoration:none;font-size:14px}
 .back:hover{color:#222}
 .hero{text-align:center}
-.portrait{display:block;width:300px;height:375px;object-fit:cover;margin:0 auto 38px;border-radius:0}
+.portrait{display:block;width:260px;height:375px;object-fit:cover;margin:0 auto 38px;border-radius:0}
 h1{margin:0 0 28px;font-size:30px;line-height:1.25;font-weight:500;letter-spacing:-.02em}
 .lead{margin:0 auto 22px;max-width:680px;font-size:18px;line-height:1.75;color:#666}
 .lead a,.official{color:#2867d9;text-decoration:none}
