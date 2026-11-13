@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Independent research papers, AI governance studies, and professional initiatives by Fozilbek Mamadyusupov.">
+        content="Independent research papers, AI governance studies, and professional initiatives by Fozilbek Mamadyusupov.">
 
     <title>Personal Researches — Fozilbek Mamadyusupov</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <style>
         .research-intro {
@@ -153,12 +156,70 @@
             color: #222;
         }
 
-        .pdf-viewer iframe {
+        .pdf-toolbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .pdf-toolbar button {
+            min-width: 35px;
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .pdf-toolbar button:hover {
+            background: #eee;
+        }
+
+        .pdf-zoom {
+            min-width: 50px;
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+        }
+
+        .pdf-pages {
+            height: 750px;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 20px 10px;
+            background: #e9e9e9;
+        }
+
+        .pdf-page {
+            margin: 0 auto 18px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+        }
+
+        .pdf-page canvas {
             display: block;
             width: 100%;
-            height: 680px;
-            border: none;
-            background: #f7f7f7;
+            height: auto;
+        }
+
+        .pdf-loading {
+            padding: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .pdf-error {
+            padding: 25px;
+            color: #b00020;
+            text-align: center;
+            font-size: 14px;
         }
 
         /* MENTORSHIP */
@@ -208,12 +269,17 @@
                 font-size: 10px;
             }
 
-            .pdf-viewer iframe {
-                height: 500px;
+            .pdf-pages {
+                height: 600px;
+                padding: 10px 4px;
             }
 
             .pdf-controls {
                 align-items: flex-start;
+            }
+
+            .pdf-title {
+                max-width: 65%;
             }
 
             .mentorship-stat {
@@ -284,30 +350,31 @@
                 the EU AI Act and built a simple three-step internal checklist.
             </p>
 
-            <button class="research-link"
-                    onclick="togglePDF('pdf-one')">
+            <button class="research-link" onclick="togglePDF('pdf-one')">
                 View Research Paper ↓
             </button>
 
             <div class="pdf-viewer" id="pdf-one">
 
                 <div class="pdf-controls">
-
                     <span class="pdf-title">
                         EU AI Act — Research Paper
                     </span>
 
-                    <button class="pdf-close"
-                            onclick="togglePDF('pdf-one')">
+                    <button class="pdf-close" onclick="togglePDF('pdf-one')">
                         ✕ Close PDF
                     </button>
-
                 </div>
 
-                <iframe
-                    src="EU_AI_Act_Corporate_Risk_Paper_Mamadyusupov.pdf#toolbar=1&navpanes=0"
-                    title="EU AI Act Research Paper">
-                </iframe>
+                <div class="pdf-toolbar">
+                    <button onclick="changeZoom('pdf-one', -0.1)">−</button>
+                    <span class="pdf-zoom" id="zoom-pdf-one">100%</span>
+                    <button onclick="changeZoom('pdf-one', 0.1)">+</button>
+                </div>
+
+                <div class="pdf-pages" id="pages-pdf-one">
+                    <div class="pdf-loading">Loading PDF...</div>
+                </div>
 
             </div>
 
@@ -347,30 +414,31 @@
                 can protect private user data when training and running AI tools.
             </p>
 
-            <button class="research-link"
-                    onclick="togglePDF('pdf-two')">
+            <button class="research-link" onclick="togglePDF('pdf-two')">
                 View Research Paper ↓
             </button>
 
             <div class="pdf-viewer" id="pdf-two">
 
                 <div class="pdf-controls">
-
                     <span class="pdf-title">
                         Data Breaches & AI Governance — Research Paper
                     </span>
 
-                    <button class="pdf-close"
-                            onclick="togglePDF('pdf-two')">
+                    <button class="pdf-close" onclick="togglePDF('pdf-two')">
                         ✕ Close PDF
                     </button>
-
                 </div>
 
-                <iframe
-                    src="Data_Breaches_AI_Governance_Paper_Mamadyusupov.pdf#toolbar=1&navpanes=0"
-                    title="Data Breaches AI Governance Research Paper">
-                </iframe>
+                <div class="pdf-toolbar">
+                    <button onclick="changeZoom('pdf-two', -0.1)">−</button>
+                    <span class="pdf-zoom" id="zoom-pdf-two">100%</span>
+                    <button onclick="changeZoom('pdf-two', 0.1)">+</button>
+                </div>
+
+                <div class="pdf-pages" id="pages-pdf-two">
+                    <div class="pdf-loading">Loading PDF...</div>
+                </div>
 
             </div>
 
@@ -386,7 +454,7 @@
         <h2 class="label">Professional Initiatives</h2>
 
 
-        <!-- 03. GLOBAL EDUCATION & ADMISSIONS MENTORSHIP -->
+        <!-- 03. MENTORSHIP -->
 
         <article class="research-item">
 
@@ -449,30 +517,31 @@
                 <span class="research-tag">LEADERSHIP</span>
             </div>
 
-            <button class="research-link"
-                    onclick="togglePDF('pdf-three')">
+            <button class="research-link" onclick="togglePDF('pdf-three')">
                 View Document ↓
             </button>
 
             <div class="pdf-viewer" id="pdf-three">
 
                 <div class="pdf-controls">
-
                     <span class="pdf-title">
                         Global Education & Admissions Mentorship
                     </span>
 
-                    <button class="pdf-close"
-                            onclick="togglePDF('pdf-three')">
+                    <button class="pdf-close" onclick="togglePDF('pdf-three')">
                         ✕ Close PDF
                     </button>
-
                 </div>
 
-                <iframe
-                    src="Документ%2056.pdf#toolbar=1&navpanes=0"
-                    title="Global Education and Admissions Mentorship Document">
-                </iframe>
+                <div class="pdf-toolbar">
+                    <button onclick="changeZoom('pdf-three', -0.1)">−</button>
+                    <span class="pdf-zoom" id="zoom-pdf-three">100%</span>
+                    <button onclick="changeZoom('pdf-three', 0.1)">+</button>
+                </div>
+
+                <div class="pdf-pages" id="pages-pdf-three">
+                    <div class="pdf-loading">Loading PDF...</div>
+                </div>
 
             </div>
 
@@ -500,28 +569,203 @@
 
 <script>
 
-    function togglePDF(id) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    const pdfFiles = {
+        "pdf-one": "EU_AI_Act_Corporate_Risk_Paper_Mamadyusupov.pdf",
+        "pdf-two": "Data_Breaches_AI_Governance_Paper_Mamadyusupov.pdf",
+        "pdf-three": "Документ%2056.pdf"
+    };
+
+    const pdfDocuments = {};
+    const pdfScales = {
+        "pdf-one": 1,
+        "pdf-two": 1,
+        "pdf-three": 1
+    };
+
+    const loadingPromises = {};
+    const rendering = {};
+
+    async function loadPDF(id) {
+
+        if (pdfDocuments[id]) return pdfDocuments[id];
+
+        if (loadingPromises[id]) return loadingPromises[id];
+
+        loadingPromises[id] = pdfjsLib
+            .getDocument(pdfFiles[id])
+            .promise;
+
+        try {
+            pdfDocuments[id] = await loadingPromises[id];
+            return pdfDocuments[id];
+        } catch (error) {
+            delete loadingPromises[id];
+            throw error;
+        }
+    }
+
+
+    async function renderPDF(id) {
+
+        if (rendering[id]) return;
+
+        rendering[id] = true;
+
+        const container = document.getElementById("pages-" + id);
+        const pdf = pdfDocuments[id];
+
+        if (!container || !pdf) {
+            rendering[id] = false;
+            return;
+        }
+
+        try {
+
+            container.innerHTML = "";
+
+            const availableWidth = Math.max(
+                250,
+                container.clientWidth - 20
+            );
+
+            const scaleFactor = pdfScales[id];
+
+            for (
+                let pageNumber = 1;
+                pageNumber <= pdf.numPages;
+                pageNumber++
+            ) {
+
+                const page = await pdf.getPage(pageNumber);
+
+                const originalViewport = page.getViewport({
+                    scale: 1
+                });
+
+                const fitScale = availableWidth / originalViewport.width;
+
+                const scale = fitScale * scaleFactor;
+
+                const viewport = page.getViewport({
+                    scale: scale
+                });
+
+                const outputScale = Math.min(
+                    window.devicePixelRatio || 1,
+                    2
+                );
+
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+
+                canvas.width = Math.floor(
+                    viewport.width * outputScale
+                );
+
+                canvas.height = Math.floor(
+                    viewport.height * outputScale
+                );
+
+                canvas.style.width = viewport.width + "px";
+                canvas.style.height = viewport.height + "px";
+
+                const pageElement = document.createElement("div");
+
+                pageElement.className = "pdf-page";
+                pageElement.style.width = viewport.width + "px";
+
+                pageElement.appendChild(canvas);
+                container.appendChild(pageElement);
+
+                await page.render({
+                    canvasContext: context,
+                    viewport: viewport,
+                    transform: outputScale !== 1
+                        ? [outputScale, 0, 0, outputScale, 0, 0]
+                        : null
+                }).promise;
+
+            }
+
+        } catch (error) {
+
+            console.error("PDF rendering error:", error);
+
+            container.innerHTML =
+                '<div class="pdf-error">Unable to display PDF pages. Please reload the page and try again.</div>';
+
+        } finally {
+
+            rendering[id] = false;
+
+        }
+
+    }
+
+
+    async function togglePDF(id) {
 
         const viewers = document.querySelectorAll(".pdf-viewer");
+
         const selectedViewer = document.getElementById(id);
 
         const isAlreadyOpen =
             selectedViewer.classList.contains("active");
 
-        // Close all PDF viewers first.
         viewers.forEach(viewer => {
             viewer.classList.remove("active");
         });
 
-        // Open selected viewer only if it was previously closed.
-        if (!isAlreadyOpen) {
+        if (isAlreadyOpen) return;
 
-            selectedViewer.classList.add("active");
+        selectedViewer.classList.add("active");
+
+        const container = document.getElementById("pages-" + id);
+
+        container.innerHTML =
+            '<div class="pdf-loading">Loading all PDF pages...</div>';
+
+        try {
+
+            await loadPDF(id);
+
+            await renderPDF(id);
 
             selectedViewer.scrollIntoView({
                 behavior: "smooth",
                 block: "nearest"
             });
+
+        } catch (error) {
+
+            console.error("PDF loading error:", error);
+
+            container.innerHTML =
+                '<div class="pdf-error">PDF could not be loaded. Check that the PDF file exists in the correct folder.</div>';
+
+        }
+
+    }
+
+
+    async function changeZoom(id, amount) {
+
+        if (rendering[id]) return;
+
+        pdfScales[id] = Math.max(
+            0.5,
+            Math.min(2, pdfScales[id] + amount)
+        );
+
+        document.getElementById("zoom-" + id).textContent =
+            Math.round(pdfScales[id] * 100) + "%";
+
+        if (pdfDocuments[id]) {
+
+            await renderPDF(id);
 
         }
 
