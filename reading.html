@@ -1,38 +1,228 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reading — Fozilbek Mamadyusupov</title><link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Books and reading interests of Fozilbek Mamadyusupov.">
+
+    <title>Reading — Fozilbek Mamadyusupov</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .reading-intro {
+            max-width: 680px;
+            margin-bottom: 38px;
+        }
+
+        .reading-directions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 28px 0 55px;
+        }
+
+        .reading-direction {
+            padding: 10px 15px;
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            color: #444;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .reading-section {
+            margin-top: 48px;
+        }
+
+        .reading-section-title {
+            margin-bottom: 25px;
+        }
+
+        .reading-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reading-book {
+            padding: 23px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .reading-book:first-child {
+            border-top: 1px solid #eee;
+        }
+
+        .book-number {
+            display: block;
+            margin-bottom: 8px;
+            color: #999;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .1em;
+        }
+
+        .book-title {
+            margin: 0;
+            font-size: 19px;
+            line-height: 1.5;
+            font-weight: 500;
+            letter-spacing: -.02em;
+        }
+
+        .book-author {
+            margin: 7px 0 0;
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .reading-directions {
+                gap: 8px;
+            }
+
+            .reading-direction {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .book-title {
+                font-size: 17px;
+            }
+
+            .reading-book {
+                padding: 20px 0;
+            }
+        }
+    </style>
 </head>
-<body><main class="container">
-<a class="back" href="index.html">← Home</a>
-<h1 class="page-title">Reading</h1>
-<p class="page-intro">I love reading books in seven directions and have turned it into a habit. Most importantly, a person should live by what they read.</p>
 
-<section>
-<div class="item"><h2 class="item-title"> History — Religion — Law — Personal Development — Literature — Business — Quotes </h2>
-</section>
+<body>
+<main class="container">
 
-<h2 class="label" style="margin-top:58px">Books</h2>
-<section>
-<div class="item"><h2 class="item-title">Instruction of the Student: The Method of Learning</h2><p class="author">Burhan al-Din al-Zarnuji</p></div>
-<div class="item"><h2 class="item-title">The Mentor of Merchants</h2><p class="author">Ahadquli Kholmuhammad ugli</p></div>
-<div class="item"><h2 class="item-title">The Value of Time in the Eyes of Scholars</h2><p class="author">Shaykh Abd al-Fattah Abu Ghuddah</p></div>
-<div class="item"><h2 class="item-title">The Harms of the Tongue</h2><p class="author">Imam Abu Hamid al-Ghazali</p></div>
-<div class="item"><h2 class="item-title">Atomic Habits</h2><p class="author">James Clear</p></div>
-<div class="item"><h2 class="item-title">The 7 Habits of Highly Effective People</h2></div>
-<div class="item"><h2 class="item-title">The Affairs of the World</h2><p class="author">Utkir Hoshimov</p></div>
-<div class="item"><h2 class="item-title">Deep Work</h2><p class="author">Cal Newport</p></div>
-</section>
-  
-<footer>
-  <p>© 2026 Fozilbek Mamadyusupov</p> 
-</footer>
-  
-<footer>
-  <a class="back" href="index.html">← Back to home</a>
-</footer>
-  
+    <header class="site-header">
+        <a class="back" href="index.html">← Home</a>
+
+        <h1 class="page-title">Reading</h1>
+
+        <p class="page-intro reading-intro">
+            I love reading books in seven directions and have turned it into
+            a habit. Most importantly, a person should live by what they read.
+        </p>
+    </header>
+
+    <!-- READING DIRECTIONS -->
+
+    <section>
+        <div class="reading-directions">
+            <span class="reading-direction">History</span>
+            <span class="reading-direction">Religion</span>
+            <span class="reading-direction">Law</span>
+            <span class="reading-direction">Personal Development</span>
+            <span class="reading-direction">Literature</span>
+            <span class="reading-direction">Business</span>
+            <span class="reading-direction">Quotes</span>
+        </div>
+    </section>
+
+    <!-- BOOK COLLECTION -->
+
+    <section class="reading-section">
+
+        <h2 class="label reading-section-title">
+            Books
+        </h2>
+
+        <div class="reading-list">
+
+            <article class="reading-book">
+                <span class="book-number">01</span>
+                <h3 class="book-title">
+                    Instruction of the Student: The Method of Learning
+                </h3>
+                <p class="book-author">
+                    Burhan al-Din al-Zarnuji
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">02</span>
+                <h3 class="book-title">
+                    The Mentor of Merchants
+                </h3>
+                <p class="book-author">
+                    Ahadquli Kholmuhammad ugli
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">03</span>
+                <h3 class="book-title">
+                    The Value of Time in the Eyes of Scholars
+                </h3>
+                <p class="book-author">
+                    Shaykh Abd al-Fattah Abu Ghuddah
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">04</span>
+                <h3 class="book-title">
+                    The Harms of the Tongue
+                </h3>
+                <p class="book-author">
+                    Imam Abu Hamid al-Ghazali
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">05</span>
+                <h3 class="book-title">
+                    Atomic Habits
+                </h3>
+                <p class="book-author">
+                    James Clear
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">06</span>
+                <h3 class="book-title">
+                    The 7 Habits of Highly Effective People
+                </h3>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">07</span>
+                <h3 class="book-title">
+                    The Affairs of the World
+                </h3>
+                <p class="book-author">
+                    Utkir Hoshimov
+                </p>
+            </article>
+
+            <article class="reading-book">
+                <span class="book-number">08</span>
+                <h3 class="book-title">
+                    Deep Work
+                </h3>
+                <p class="book-author">
+                    Cal Newport
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Fozilbek Mamadyusupov</p>
+        <a class="back" href="index.html">← Back to home</a>
+    </footer>
+
 </main>
 </body>
 </html>
